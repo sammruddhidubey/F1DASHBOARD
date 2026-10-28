@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080d0c">
+    <meta name="description" content="Explore Formula 1 race results through an interactive Tableau dashboard and story. 6,464 race records analyzed across 17 seasons.">
+    <title>F1 Race Intelligence | Technical Archive & Precision Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="kira-archive-theme">
+    <!-- Heritage Scrutineering Ribbon -->
+    <div class="archive-ribbon" aria-label="Technical Archive Status">
+      <div class="ribbon-inner">
+        <div class="ribbon-left">
+          <span class="ribbon-badge">ARCHIVE SPEC</span>
+          <span class="ribbon-text">FIA DATASET VERIFICATION // 6,464 OBSERVATIONS // SEASONS 2010–2026</span>
+        </div>
+        <div class="ribbon-right">
+          <span class="status-indicator"></span>
+          <span>ONLINE REPOSITORY</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Header -->
+    <header class="editorial-header">
+      <div class="header-container">
+        <a class="archive-brand" href="#top" aria-label="F1 Race Intelligence Home">
+          <div class="brand-crest">
+            <span class="crest-mark">F1</span>
+          </div>
+          <div class="brand-headings">
+            <span class="brand-super">FORMULA 1</span>
+            <span class="brand-title">RACE INTELLIGENCE</span>
+            <span class="brand-sub">TECHNICAL ARCHIVE & STORY</span>
+          </div>
+        </a>
+
+        <nav class="editorial-nav" aria-label="Main Navigation">
+          <a href="#prologue" class="nav-item">Prologue</a>
+          <a href="#console" class="nav-item">Story Console</a>
+          <a href="#catalogue" class="nav-item">Visual Catalogue (9)</a>
+          <a href="#provenance" class="nav-item">Provenance & Scope</a>
+          <a href="docs/project-report.md" class="nav-item doc-btn">Report ↗</a>
+        </nav>
+
+        <div class="header-cta-group">
+          <a class="btn-github-minimal" href=" " target="_blank" rel="noreferrer" aria-label="GitHub Repository">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Architectural Editorial Hero -->
+      <section class="editorial-hero" id="prologue">
+        <div class="hero-container">
+          <div class="hero-dossier-grid">
+            <div class="hero-left-column">
+              <div class="technical-index-pill">
+                <span class="index-num">DOC-01</span>
+                <span class="index-title">DATA ANALYTICS WITH TABLEAU PUBLIC</span>
+              </div>
+
+              <h1 class="hero-editorial-title">
+                Every race tells<br>
+                <em>a data story.</em>
+              </h1>
+
+              <p class="hero-editorial-lead">
+                An empirical investigation into <strong>6,464 race results</strong> recorded across <strong>17 modern Formula 1 seasons</strong>. Designed to evaluate constructor progressions, weather impact, tyre allocation, and race attrition within an uncorrupted analytical framework.
+              </p>
+
+              <div class="hero-editorial-actions">
+                <a class="btn-emerald" href="#console">
+                  <span>ENTER STORY CONSOLE</span>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </a>
+                <a class="btn-outline-minimal" href="https://public.tableau.com/app/profile/samruddhi.dubey/viz/f1-story_17932134231870/Story1?publish=yes
+                " target="_blank" rel="noreferrer">
+                  <span>TABLEAU PUBLIC ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Precision Technical Metadata Panel -->
+            <div class="hero-spec-table-wrap">
+              <div class="spec-table-header">
+                <span class="spec-tag">SPECIFICATION</span>
+                <span class="spec-id">METRIC-SET V1.4</span>
+              </div>
+
+              <div class="spec-rows">
+                <div class="spec-row">
+                  <span class="spec-label">SAMPLE CAPACITY</span>
+                  <span class="spec-val highlight">6,464 Rows</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">ERA COVERED</span>
+                  <span class="spec-val">2010 – 2026 (17 Yrs)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">STORY CHAPTERS</span>
+                  <span class="spec-val">9 Visual Scenes</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">PRIMARY SOURCE</span>
+                  <span class="spec-val"><code>race_results</code></span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">FRAMEWORK</span>
+                  <span class="spec-val">Tableau Cloud Public</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">IMPUTATION POLICY</span>
+                  <span class="spec-val highlight-gold">Zero-Substitution</span>
+                </div>
+              </div>
+
+              <div class="spec-table-footer">
+                <span class="footer-legend">PROVENANCE: F1 Racing Project Dataset.xlsx</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural Stat Matrix -->
+        <div class="matrix-band">
+          <div class="matrix-container">
+            <div class="matrix-cell">
+              <span class="cell-sub">OBSERVATIONS</span>
+              <span class="cell-number">6,464</span>
+              <span class="cell-label">Individual finishing records</span>
+            </div>
+            <div class="matrix-cell">
+              <span class="cell-sub">TEMPORAL RANGE</span>
+              <span class="cell-number">17</span>
+              <span class="cell-label">Modern Formula 1 seasons</span>
+            </div>
+            <div class="matrix-cell">
+              <span class="cell-sub">NARRATIVE SCENES</span>
+              <span class="cell-number">09</span>
+              <span class="cell-label">Sequential analytical points</span>
+            </div>
+            <div class="matrix-cell">
+              <span class="cell-sub">ACCESSIBILITY</span>
+              <span class="cell-number">100%</span>
+              <span class="cell-label">Open cloud visualization</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Precision Tableau Story Console -->
+      <section class="editorial-console-section" id="console">
+        <div class="console-container">
+          <div class="console-header-block">
+            <div class="header-pre">
+              <span class="emerald-dot"></span>
+              <span>INTERACTIVE STORYPOINT VIEWER</span>
+            </div>
+            <h2 class="console-title">Tableau Intelligence Console</h2>
+            <p class="console-desc">Step sequentially through the 9 curated visual scenes embedded directly from the verified Tableau Public cloud server.</p>
+
+            <div class="console-action-bar">
+              <button class="action-btn" id="kiraFullscreen" type="button" title="View Fullscreen">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                <span>Fullscreen</span>
+              </button>
+              <button class="action-btn" id="kiraReload" type="button" title="Reload Frame">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                <span>Reload</span>
+              </button>
+              <button class="action-btn" id="kiraCopy" type="button" title="Copy Link">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy URL</span>
+              </button>
+              <a class="action-btn accent" href="https://public.tableau.com/app/profile/samruddhi.dubey/viz/f1-story_17932134231870/Story1?publish=yes" target="_blank" rel="noreferrer">
+                <span>Direct Tableau Portal ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Architectural Frame Chassis -->
+          <div class="archive-chassis" id="kiraChassis">
+            <div class="chassis-chrome-bar">
+              <div class="chassis-status">
+                <span class="mono-badge">TABLEAU EMBED</span>
+                <span class="chassis-doc-title">Story 1</span>
+              </div>
+              <div class="chassis-audit-tag">
+                <span>VERIFIED REPRODUCIBLE</span>
+              </div>
+            </div>
+
+            <div class="chassis-viewport">
+              <iframe
+                id="kiraIframe"
+                title="F1 Race Intelligence Tableau Public Story"
+                src="https://public.tableau.com/views/F1RaceIntelligencedashboard/Story1?:showVizHome=no&:embed=true"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="chassis-caption-bar">
+              <span class="caption-text">If browser security rules suppress the live frame, <a href="https://public.tableau.com/app/profile/samruddhi.dubey/viz/f1-story_17932134231870/Story1?publish=yes" target="_blank" rel="noreferrer">access the native Tableau Public workbook</a>.</span>
+              <span class="caption-code">HASH: #F1-STORY-09</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 Visual Catalogue Section -->
+      <section class="editorial-catalogue-section" id="catalogue">
+        <div class="catalogue-container">
+          <div class="catalogue-heading-wrap">
+            <span class="catalogue-tag">// SYSTEMATIC BREAKDOWN</span>
+            <h2 class="catalogue-title">Catalogue of Visual Scenes</h2>
+            <p class="catalogue-sub">An annotated inventory of the nine discrete visualizations synthesized in the story.</p>
+          </div>
+
+          <!-- Catalogue Filter Chips -->
+          <div class="catalogue-filter-bar" role="tablist">
+            <button class="cat-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Scenes (9)</button>
+            <button class="cat-filter-btn" data-filter="championship" role="tab" aria-selected="false">Championship & Standings (3)</button>
+            <button class="cat-filter-btn" data-filter="reliability" role="tab" aria-selected="false">Reliability & Weather (2)</button>
+            <button class="cat-filter-btn" data-filter="tactics" role="tab" aria-selected="false">Strategy & Circuits (4)</button>
+          </div>
+
+          <!-- 9 Architectural Catalogue Cards Grid -->
+          <div class="catalogue-grid">
+            <!-- Scene 01 -->
+            <article class="cat-card" data-category="championship">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 01</span>
+                <span class="cat-class">CONSTRUCTOR TIMELINE</span>
+              </div>
+              <h3 class="cat-name">Team points by season</h3>
+              <p class="cat-description">Chronological comparative trajectories of constructor points totals across the 2010–2026 seasons.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>SUM(Points)</code></span>
+                <span class="status-chip">Trend</span>
+              </div>
+            </article>
+
+            <!-- Scene 02 -->
+            <article class="cat-card" data-category="championship">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 02</span>
+                <span class="cat-class">DRIVER CUMULATIVE</span>
+              </div>
+              <h3 class="cat-name">Driver points leaderboard</h3>
+              <p class="cat-description">Cumulative ranked point distribution across individual competitors recorded within the archival dataset.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>SUM(Points)</code></span>
+                <span class="status-chip">Leaderboard</span>
+              </div>
+            </article>
+
+            <!-- Scene 03 -->
+            <article class="cat-card" data-category="reliability">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 03</span>
+                <span class="cat-class">FAILURE PROFILE</span>
+              </div>
+              <h3 class="cat-name">Non-finishes by reason</h3>
+              <p class="cat-description">Taxonomic breakdown of recorded retirement factors, categorizing mechanical failures, collisions, and technical stoppages.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>COUNT(Dnf)</code></span>
+                <span class="status-chip">Reliability</span>
+              </div>
+            </article>
+
+            <!-- Scene 04 -->
+            <article class="cat-card" data-category="reliability">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 04</span>
+                <span class="cat-class">ENVIRONMENTAL IMPACT</span>
+              </div>
+              <h3 class="cat-name">Non-finish rate by weather</h3>
+              <p class="cat-description">Proportional calculation of the mean 0/1 DNF flag against meteorological categories (Dry, Wet, Variable conditions).</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>AVG(Dnf)</code></span>
+                <span class="status-chip">Attrition Rate</span>
+              </div>
+            </article>
+
+            <!-- Scene 05 -->
+            <article class="cat-card" data-category="championship">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 05</span>
+                <span class="cat-class">CONSTRUCTOR BENCHMARK</span>
+              </div>
+              <h3 class="cat-name">Team points leaderboard</h3>
+              <p class="cat-description">Aggregate constructor scoring benchmarks, establishing macro hierarchies between front-running and midfield outfits.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>SUM(Points)</code></span>
+                <span class="status-chip">Constructors</span>
+              </div>
+            </article>
+
+            <!-- Scene 06 -->
+            <article class="cat-card" data-category="tactics">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 06</span>
+                <span class="cat-class">GRID RECOVERY</span>
+              </div>
+              <h3 class="cat-name">Average positions gained</h3>
+              <p class="cat-description">Mathematical mean difference between grid qualifying position and race classification across teams.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>AVG(Positions Gained)</code></span>
+                <span class="status-chip">Delta Mean</span>
+              </div>
+            </article>
+
+            <!-- Scene 07 -->
+            <article class="cat-card" data-category="tactics">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 07</span>
+                <span class="cat-class">TYRE ALLOCATION</span>
+              </div>
+              <h3 class="cat-name">Starting tyre distribution</h3>
+              <p class="cat-description">Frequency census of starting compound selections, outlining team risk appetite under varied track conditions.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>COUNT(Compound)</code></span>
+                <span class="status-chip">Compounds</span>
+              </div>
+            </article>
+
+            <!-- Scene 08 -->
+            <article class="cat-card" data-category="tactics">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 08</span>
+                <span class="cat-class">CIRCUIT TOPOLOGY</span>
+              </div>
+              <h3 class="cat-name">Points by circuit type</h3>
+              <p class="cat-description">Summed points yield distributed across street tracks, permanent road courses, and high-speed facilities.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>SUM(Points)</code></span>
+                <span class="status-chip">Track Types</span>
+              </div>
+            </article>
+
+            <!-- Scene 09 -->
+            <article class="cat-card" data-category="tactics">
+              <div class="card-edge-mark"></div>
+              <div class="card-meta-line">
+                <span class="cat-num">SCENE 09</span>
+                <span class="cat-class">RACE EXECUTION</span>
+              </div>
+              <h3 class="cat-name">Average finish position</h3>
+              <p class="cat-description">Mean classification benchmark per constructor team across completed races, reflecting long-term execution stability.</p>
+              <div class="cat-rule"></div>
+              <div class="cat-footer">
+                <span class="measure-label">Aggregation: <code>AVG(Finish Position)</code></span>
+                <span class="status-chip">Mean Finish</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Provenance & Methodology Section -->
+      <section class="editorial-provenance-section" id="provenance">
+        <div class="provenance-container">
+          <div class="provenance-editorial-card">
+            <div class="card-col-text">
+              <span class="mono-label">METHODOLOGY & DATA INTEGRITY</span>
+              <h2 class="provenance-title">Descriptive Boundaries & Scrutineering Rigor</h2>
+              <p class="provenance-paragraph">This project represents a descriptive analysis of the course-provided workbook <code>F1 Racing Project Dataset.xlsx</code> (sheet: <code>race_results</code>). It presents observed associations within historical records; it does not claim causal inference or predictive determinism regarding weather or tyre impact.</p>
+              <p class="provenance-sub">All historical point totals are preserved as recorded, without retroactive scaling. Missing finish positions for non-finishers are explicitly retained without synthetic zero-imputation.</p>
+              <div class="provenance-actions">
+                <a class="btn-emerald small" href="docs/project-report.md">
+                  <span>READ PROJECT REPORT (MD)</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-col-checklist">
+              <div class="checklist-header">
+                <span class="check-title">TECHNICAL SCRUTINEERING PROTOCOL</span>
+                <span class="check-stamp">VERIFIED</span>
+              </div>
+              <div class="check-items">
+                <div class="check-row">
+                  <div class="check-glyph">01</div>
+                  <div class="check-desc">
+                    <strong>Zero-Substitution Protocol:</strong>
+                    <span>Non-finish observations maintain genuine blank finish values rather than distorted artificial positions.</span>
+                  </div>
+                </div>
+                <div class="check-row">
+                  <div class="check-glyph">02</div>
+                  <div class="check-desc">
+                    <strong>Scoring System Authenticity:</strong>
+                    <span>Points reflect the native scoring system under which each championship grand prix was conducted.</span>
+                  </div>
+                </div>
+                <div class="check-row">
+                  <div class="check-glyph">03</div>
+                  <div class="check-desc">
+                    <strong>Statistically Pure Aggregations:</strong>
+                    <span>Means are used strictly for finish rankings and grid deltas; sums are reserved for championship points.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Heritage Editorial Footer -->
+    <footer class="editorial-footer">
+      <div class="footer-container">
+        <div class="footer-meta-col">
+          <div class="brand-crest small"><span class="crest-mark">F1</span></div>
+          <span class="footer-brand-title">RACE INTELLIGENCE</span>
+          <p class="footer-desc">An interactive Tableau Public analytics project authored by Samruddhi Dubey.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="link-column">
+            <span class="col-head">SECTIONS</span>
+            <a href="#prologue">Prologue</a>
+            <a href="#console">Story Console</a>
+            <a href="#catalogue">Visual Catalogue</a>
+            <a href="#provenance">Provenance</a>
+          </div>
+          <div class="link-column">
+            <span class="col-head">PROVENANCE</span>
+            <a href="docs/project-report.md">Project Report</a>
+            <a href="https://public.tableau.com/app/profile/samruddhi.dubey/viz/f1-story_17932134231870/Story1?publish=yes" target="_blank" rel="noreferrer">Tableau Public</a>
+            <a href=" " target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <div class="fine-border"></div>
+        <div class="fine-flex">
+          <span>&copy; Samruddhi Dubey· Data Analytics with Tableau Project</span>
+          <a href="#top" class="top-anchor">Return to Top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Toast -->
+    <div class="archive-toast" id="kiraToast">
+      <span class="toast-dot"></span>
+      <span id="kiraToastText">Link copied to clipboard</span>
+    </div>
+
+    <!-- Client Script -->
+    <script>
+      (function() {
+        const btnFullscreen = document.getElementById('kiraFullscreen');
+        const chassis = document.getElementById('kiraChassis');
+        if (btnFullscreen && chassis) {
+          btnFullscreen.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+              if (chassis.requestFullscreen) chassis.requestFullscreen();
+              else if (chassis.webkitRequestFullscreen) chassis.webkitRequestFullscreen();
+              btnFullscreen.querySelector('span').textContent = 'Exit';
+            } else {
+              if (document.exitFullscreen) document.exitFullscreen();
+              btnFullscreen.querySelector('span').textContent = 'Fullscreen';
+            }
+          });
+          document.addEventListener('fullscreenchange', function() {
+            if (!document.fullscreenElement && btnFullscreen) {
+              btnFullscreen.querySelector('span').textContent = 'Fullscreen';
+            }
+          });
+        }
+
+        const btnReload = document.getElementById('kiraReload');
+        const iframe = document.getElementById('kiraIframe');
+        if (btnReload && iframe) {
+          btnReload.addEventListener('click', function() {
+            const src = iframe.src;
+            iframe.src = '';
+            setTimeout(function() {
+              iframe.src = src;
+              showToast('Tableau stream reloaded');
+            }, 80);
+          });
+        }
+
+        const btnCopy = document.getElementById('kiraCopy');
+        const directUrl = "https://public.tableau.com/app/profile/samruddhi.dubey/viz/f1-story_17932134231870/Story1?publish=yes";
+        if (btnCopy) {
+          btnCopy.addEventListener('click', function() {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(directUrl).then(function() {
+                showToast('Tableau Public URL copied');
+              });
+            } else {
+              const t = document.createElement('textarea');
+              t.value = directUrl;
+              document.body.appendChild(t);
+              t.select();
+              document.execCommand('copy');
+              document.body.removeChild(t);
+              showToast('Tableau Public URL copied');
+            }
+          });
+        }
+
+        const toast = document.getElementById('kiraToast');
+        const toastText = document.getElementById('kiraToastText');
+        let timer;
+        function showToast(msg) {
+          if (!toast) return;
+          if (toastText) toastText.textContent = msg;
+          toast.classList.add('visible');
+          clearTimeout(timer);
+          timer = setTimeout(function() {
+            toast.classList.remove('visible');
+          }, 3000);
+        }
+
+        const filterBtns = document.querySelectorAll('.cat-filter-btn');
+        const cards = document.querySelectorAll('.cat-card');
+        filterBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            const f = btn.getAttribute('data-filter');
+            cards.forEach(function(c) {
+              if (f === 'all' || c.getAttribute('data-category') === f) {
+                c.style.display = 'flex';
+                setTimeout(function() { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 20);
+              } else {
+                c.style.opacity = '0';
+                c.style.transform = 'translateY(10px)';
+                setTimeout(function() { c.style.display = 'none'; }, 200);
+              }
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
